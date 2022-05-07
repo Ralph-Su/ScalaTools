@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7571c79-76e5-44bc-8255-6f5eeb6f7ef8" name="Changes" comment="add maven">
+    <list default="true" id="f7571c79-76e5-44bc-8255-6f5eeb6f7ef8" name="Changes" comment="loop date period">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScalaTools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScalaTools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/JodaTime.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/JodaTime.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,10 +34,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RunManager">
     <configuration name="JodaTime" type="Application" factoryName="Application" temporary="true">
@@ -64,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651923156332</updated>
       <workItem from="1651923159846" duration="1011000" />
-      <workItem from="1651924202878" duration="1221000" />
+      <workItem from="1651924202878" duration="3243000" />
     </task>
     <task id="LOCAL-00001" summary="add maven">
       <created>1651925083316</created>
@@ -73,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651925083316</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="loop date period">
+      <created>1651925550491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651925550491</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +99,7 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="add maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="add maven" />
+    <MESSAGE value="loop date period" />
+    <option name="LAST_COMMIT_MESSAGE" value="loop date period" />
   </component>
 </project>
