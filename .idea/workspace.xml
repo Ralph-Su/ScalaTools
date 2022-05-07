@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7571c79-76e5-44bc-8255-6f5eeb6f7ef8" name="Changes" comment="alter loop date period method">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/Test.scala" afterDir="false" />
+    <list default="true" id="f7571c79-76e5-44bc-8255-6f5eeb6f7ef8" name="Changes" comment="test loop date period method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScalaTools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ScalaTools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/JodaTime.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/JodaTime.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/Test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/Test.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -43,7 +43,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.JodaTime">
     <configuration name="JodaTime" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="JodaTime" />
       <module name="ScalaTools" />
@@ -60,8 +60,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.JodaTime" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651923156332</updated>
       <workItem from="1651923159846" duration="1011000" />
-      <workItem from="1651924202878" duration="4952000" />
+      <workItem from="1651924202878" duration="8201000" />
     </task>
     <task id="LOCAL-00001" summary="add maven">
       <created>1651925083316</created>
@@ -97,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651927543218</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test loop date period method">
+      <created>1651930961033</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651930961033</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +128,7 @@
     <MESSAGE value="add maven" />
     <MESSAGE value="loop date period" />
     <MESSAGE value="alter loop date period method" />
-    <option name="LAST_COMMIT_MESSAGE" value="alter loop date period method" />
+    <MESSAGE value="test loop date period method" />
+    <option name="LAST_COMMIT_MESSAGE" value="test loop date period method" />
   </component>
 </project>
