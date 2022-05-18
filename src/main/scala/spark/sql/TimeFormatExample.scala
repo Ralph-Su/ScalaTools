@@ -11,15 +11,16 @@ object TimeFormatExample extends App {
 
   val spark = SparkSession.builder()
     .master("local[1]")
-    .appName("SparkSessionExample")
+    .appName("TimeFormatExample")
     .getOrCreate()
   spark.sparkContext.setLogLevel("Error")
 
+  // create dataframe from Seq need  spark.implicits._
   import spark.implicits._
 
   /**
    * @Description: 解析字符串格式的时间，并格式化时间
-   * @Param timeStr: 原始格式的时间
+   * @Param originalTime: 原始格式的时间
    * @Param originalFormat: 原始格式
    * @Param targetFormat: 目标格式
    * @return: void
