@@ -67,7 +67,7 @@ object DingMessageSender extends App {
 
 //  sendTextMessage("数据")
 
-  def sendTextMessage() : Unit = {
+  def sendLinkMessage() : Unit = {
     val webhook = "https://oapi.dingtalk.com/robot/send?access_token="
     val client : DingTalkClient= new DefaultDingTalkClient(webhook)
     val request: OapiRobotSendRequest = new OapiRobotSendRequest()
