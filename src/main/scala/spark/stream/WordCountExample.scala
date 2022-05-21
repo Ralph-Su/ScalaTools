@@ -2,11 +2,15 @@ package spark.stream
 
 import org.apache.spark.sql.functions.{col, explode}
 import org.apache.spark.sql.{DataFrame, SparkSession, functions}
-
-object ReadTcpDataExample extends App {
+/**
+  * @Author: suwenjin
+  * @Description: Structured Streaming Word Count简洁版
+  * @Time: 2022/5/21 11:14 AM
+**/
+object WordCountExample extends App {
   val spark = SparkSession.builder()
     .master("local[*]")
-    .appName("ReadTcpDataExample")
+    .appName("StructuredStreamingWordCountExample")
     .getOrCreate()
 
   spark.sparkContext.setLogLevel("error")

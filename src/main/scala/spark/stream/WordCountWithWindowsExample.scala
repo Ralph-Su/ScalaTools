@@ -42,6 +42,16 @@ object WordCountWithWindowsExample extends App {
    * 2021-10-01 09:44:00, Spark SQL
    * 2021-10-01 09:29:00, Test Test
    * 2021-10-01 09:33:00, Spark is cool
+   *
+   *分析：
+   *   event time                               水印        水位线       上沿      下沿
+2021-10-01 09:30:00, Apache Spark           09:30:00    09:20:00  09:25:00    09:20:00  ok
+2021-10-01 09:36:00, Structured Streaming   09:36:00    09:26:00  09:30:00    09:25:00  ok
+2021-10-01 09:39:00, Spark Streaming        09:39:00    09:29:00  09:30:00    09:25:00  ok
+2021-10-01 09:41:00, AMP Lab                09:41:00    09:31:00  09:35:00    09:30:00  ok
+2021-10-01 09:44:00, Spark SQL              09:44:00    09:34:00  09:35:00    09:30:00  ok
+2021-10-01 09:29:00, Test Test              09:44:00    09:34:00  09:35:00    09:30:00  no
+2021-10-01 09:33:00, Spark is cool          09:44:00    09:33:00  09:35:00    09:30:00  ok
    * */
 
   val countDf = df.withColumn("inputs", split(col("value"), ","))
@@ -67,7 +77,8 @@ object WordCountWithWindowsExample extends App {
   countDf.writeStream
     .format("console") // 指定Sink为终端（Console）
     .option("truncate", false) // 指定输出选项,“truncate”选项，用来表明输出内容是否需要截断。
-    .outputMode("complete") //.outputMode("update")
+//    .outputMode("complete")
+    .outputMode("update")
     .start() // 启动流处理应用
     .awaitTermination() // 等待中断指令
 
