@@ -11,7 +11,7 @@ object WindowWordCountExample {
     val port: Int = 9999
 
     val env = StreamExecutionEnvironment.getExecutionEnvironment
-    val text = env.socketTextStream(host, 9999)
+    val text = env.socketTextStream(host, port)
 
     val counts = text.flatMap { _.toLowerCase.split(",") filter { _.nonEmpty } }
       .map { (_, 1) }
