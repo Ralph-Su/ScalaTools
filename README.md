@@ -1,0 +1,14 @@
+# ScalaTools
+## SparkSQL
+- SQLContext
+- SparkSession
+- 格式化时间
+## 消息推送
+### 钉钉群消息推送
+- markdown格式的消息推送
+- text格式的消息推送
+- link格式的消息推送
+### 邮件消息推送
+## JodaTime
+- 遍历时区的一天的24小时
+- 遍历开始时间和结束时间中的每一天
