@@ -50,13 +50,13 @@ object DataAnalysisExample extends App {
   val costSum202203 = semiAndSum(costDetails202203).sort(col("ExtendedCost").desc)
   val costSum202204 = semiAndSum(costDetails202204).sort(col("ExtendedCost").desc)
 
-//  costSum202203.show(false)
-//  costSum202204.show(false)
+  costSum202203.show(false)
+  costSum202204.show(false)
 
-//  costSum202204.groupBy(col("t1.ResourceGroup"), col("t1.Category"), col("t1.MeterName"))
-//    .agg(sum("ExtendedCost").as("ExtendedCost")).limit(20).coalesce(1)
-//    .write.option("header",true).mode(SaveMode.Overwrite)
-//    .csv("src/main/resources/4月成本明细")
+  costSum202204.groupBy(col("t1.ResourceGroup"), col("t1.Category"), col("t1.MeterName"))
+    .agg(sum("ExtendedCost").as("ExtendedCost")).limit(20).coalesce(1)
+    .write.option("header",true).mode(SaveMode.Overwrite)
+    .csv("src/main/resources/4月成本明细")
 
   /**
     * @Description: 分析4月成本
