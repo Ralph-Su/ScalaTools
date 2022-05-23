@@ -1,7 +1,6 @@
 package spark.stream
 
-import org.apache.spark.sql.expressions.Window
-import org.apache.spark.sql.functions.{col, element_at, explode, max, split, window}
+import org.apache.spark.sql.functions.{col, element_at, explode, split, window}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 /**

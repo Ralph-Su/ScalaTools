@@ -1,13 +1,9 @@
 package spark.stream
 
-import org.apache.spark.sql.functions.{col, explode, split}
+import org.apache.spark.sql.functions.{col, element_at, explode, split, window}
 import org.apache.spark.sql.{DataFrame, SparkSession}
-/**
-  * @Author: suwenjin
-  * @Description: Structured Streaming Word Count Quick Example
-  * @Time: 2022/5/21 11:14 AM
-**/
-object WordCountExample extends App {
+
+object WordCountSlidingWindowExample extends App {
   val spark = SparkSession.builder()
     .master("local[*]")
     .appName("StructuredStreamingWordCountExample")
@@ -28,13 +24,16 @@ object WordCountExample extends App {
     .option("port", port)
     .load()
 
+
   /**
    * 使用DataFrame API完成Word Count计算
    * */
   // 首先把接收到的字符串，以空格为分隔符做拆分，得到单词数组words
-  val countDf = df.withColumn("words", split(df("value"), ",")) // 把数组words展平为单word
-    .withColumn("word", explode(col("words"))) // 以单词word为Key做分组
-    .groupBy("word") // 分组计数
+  val countDf = df.withColumn("inputs", split(df("value"), ","))
+    .withColumn("event_time", element_at(col("inputs"), 1).cast("timestamp"))
+    .withColumn("word", element_at(col("inputs"), 2))
+    // 10 mins windows, sliding every 5mins
+    .groupBy(window(col("event_time"), "10 minutes", "5 minutes"), col("word"))
     .count()
 
   /**
@@ -45,7 +44,7 @@ object WordCountExample extends App {
    * */
   countDf.writeStream
     .format("console") // 指定Sink为终端（Console）
-    .option("truncate",  false) // 指定输出选项,“truncate”选项，用来表明输出内容是否需要截断。
+    .option("truncate", false) // 指定输出选项,“truncate”选项，用来表明输出内容是否需要截断。
     // .outputMode("complete")
     .outputMode("update")
     .start() // 启动流处理应用
