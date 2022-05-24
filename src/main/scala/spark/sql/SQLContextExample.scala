@@ -25,9 +25,9 @@ object SQLContextExample extends App {
   val sqlContext = new SQLContext(sparkContext)
 
   // sparkContext => RDD
-  val rdd : RDD[String] = sparkContext.textFile("src/main/resources/textfile.csv")
+  val rdd : RDD[String] = sparkContext.textFile("src/main/resources/textfile_1.csv")
   // sqlContext => DataFrame
-  val df : DataFrame = sqlContext.read.csv("src/main/resources/textfile.csv")
+  val df : DataFrame = sqlContext.read.csv("src/main/resources/textfile_1.csv")
   df.printSchema()
 
   sparkContext.stop()

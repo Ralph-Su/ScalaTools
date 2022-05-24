@@ -58,6 +58,20 @@ object DataAnalysisExample extends App {
     .write.option("header",true).mode(SaveMode.Overwrite)
     .csv("src/main/resources/4月成本明细")
 
+  def uselessResource() = {
+    costSum202204.filter(col("ResourceGroup") === "databricks-rg-cbdatabricks-itirgrcyl6c5u")
+      .coalesce(1)
+      .write.option("header",true).mode(SaveMode.Overwrite)
+      .csv("src/main/resources/4月废弃Databricks费用")
+
+    costSum202203.filter(col("ResourceGroup") === "databricks-rg-cbdatabricks-itirgrcyl6c5u")
+      .coalesce(1)
+      .write.option("header",true).mode(SaveMode.Overwrite)
+      .csv("src/main/resources/3月废弃Databricks费用")
+  }
+
+  uselessResource()
+
   /**
     * @Description: 分析4月成本
     * @return: org.apache.spark.sql.RelationalGroupedDataset
@@ -93,7 +107,7 @@ object DataAnalysisExample extends App {
       .csv("src/main/resources/4月成本DWBI-virtual machines按天统计")
   }
 
-  analysis202204()
+//  analysis202204()
 
   /**
     * @Description: 比较4月和3月成本
